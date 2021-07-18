@@ -1,6 +1,4 @@
-package com.leetcode.algorithm.sort;
-
-import java.util.HashMap;
+package com.leetcode.algorithm.array.sort;
 
 public class InsertSort {
     public static void sort(int[] arr){

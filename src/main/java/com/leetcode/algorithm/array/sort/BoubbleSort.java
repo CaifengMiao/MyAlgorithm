@@ -1,6 +1,4 @@
-package com.leetcode.algorithm.sort;
-
-import javax.swing.plaf.synth.SynthOptionPaneUI;
+package com.leetcode.algorithm.array.sort;
 
 /**
  * 冒泡排序

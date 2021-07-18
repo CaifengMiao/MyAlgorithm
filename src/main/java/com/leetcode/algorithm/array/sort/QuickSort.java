@@ -1,4 +1,4 @@
-package com.leetcode.algorithm.sort;
+package com.leetcode.algorithm.array.sort;
 
 
 public class QuickSort {
