@@ -62,5 +62,5 @@ public class minWindowSubString {
             minSubString = s.substring(minSubStart, minSubStart + windowLength);
         return minSubString;
     }
-    
+
 }
