@@ -32,24 +32,17 @@ public class minSubArrayLen {
     public static int minSubArrayLen(int target, int[] nums) {
         int minLen = 0, subSum = 0, left = 0, right = 0;
 
-        while(right<nums.length && left<nums.length){
-            while(subSum < target && right<nums.length) {
-                subSum = subSum + nums[right];
-                right++;
-                if (subSum >= target) {
-                    minLen = minLen == 0 ? right - left:Math.min(minLen,right-left);
-                }
-            }
-            while(subSum>=target && left<nums.length){
-                subSum = subSum - nums[left];
-                left++;
-                if (subSum >= target) {
-                    minLen = Math.min(minLen,right-left);
+        for(;right<nums.length;right++){
+            subSum = subSum + nums[right];
+            if(subSum >= target) {
+                while (subSum >= target) {
+                    minLen = minLen == 0 ? right - left + 1 : Math.min(minLen, right - left +1);
+                    subSum = subSum - nums[left];
+                    left++;
                 }
             }
         }
 
         return minLen;
     }
-
 }
