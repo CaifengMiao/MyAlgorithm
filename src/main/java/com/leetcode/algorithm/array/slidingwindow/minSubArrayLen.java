@@ -1,4 +1,4 @@
-package com.leetcode.algorithm.array.slidingWindow;
+package com.leetcode.algorithm.array.slidingwindow;
 
 /**
  * Given an array of positive integers nums and a positive integer target,return the minimal length of a contiguous

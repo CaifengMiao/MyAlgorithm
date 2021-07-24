@@ -1,8 +1,4 @@
-package com.leetcode.algorithm.array.slidingWindow;
-
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
+package com.leetcode.algorithm.array.slidingwindow;
 
 /**
  * Given two strings s and t of lengths m and n respectively, return the minimum window substring of s such that every
