@@ -1,6 +1,5 @@
-package com.leetcode.algorithm.array.slidingWindow;
+package com.leetcode.algorithm.array.slidingwindow;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -54,23 +53,23 @@ public class totalFruit {
      * @return
      */
     public static int totalFruit(int[] fruits) {
+
         HashMap<Integer,Integer> basketsMap = new HashMap<Integer,Integer>();
         int maxFruitsNum = 0;
-        int left=0,right=0,fruitsNum = 0;
-        while(right<fruits.length){
-            while(basketsMap.size()<=2 && right<fruits.length){
+        int left=0, right=0, fruitsNum = 0;
+        for(;right<fruits.length;right++){
+            if(basketsMap.size()<=2){
                 if(basketsMap.containsKey(fruits[right])){
                     basketsMap.put(fruits[right],basketsMap.get(fruits[right])+1);
                 }else{
                     basketsMap.put(fruits[right],1);
                 }
-                right++;
-                if(basketsMap.size()<=2)
-                    fruitsNum=right-left;
-
+                if(basketsMap.size()<=2) {
+                    maxFruitsNum = Math.max(right - left + 1, maxFruitsNum);
+                }
             }
 
-            while(basketsMap.size()>2 && right>left){
+            while(basketsMap.size()>2){
                 if(basketsMap.get(fruits[left])>1){
                     basketsMap.put(fruits[left],basketsMap.get(fruits[left])-1);
                 }else {
@@ -78,10 +77,10 @@ public class totalFruit {
                 }
                 left++;
             }
-            maxFruitsNum = Math.max(fruitsNum,maxFruitsNum);
+
         }
 
-        return maxFruitsNum;
+        return  maxFruitsNum = Math.max(right-left,maxFruitsNum);
     }
 
     public static void main(String[] args){

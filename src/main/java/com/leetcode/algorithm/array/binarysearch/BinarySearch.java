@@ -1,23 +1,26 @@
 package com.leetcode.algorithm.array.binarysearch;
 
 /**
- * 给定一个 n 个元素有序的（升序）整型数组 nums 和一个目标值 target  ，写一个函数搜索 nums 中的 target，如果目标值存在返回下标，否则返回 -1。
+ * Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search
+ * target in nums. If target exists, then return its index. Otherwise, return -1.
+ * You must write an algorithm with O(log n) runtime complexity.
  *
- * 示例 1:
- * 输入: nums = [-1,0,3,5,9,12], target = 9
- * 输出: 4
- * 解释: 9 出现在 nums 中并且下标为 4
+ * Example 1:
+ * Input: nums = [-1,0,3,5,9,12], target = 9  Output: 4
+ * Explanation: 9 exists in nums and its index is 4
  *
- * 示例 2:
- * 输入: nums = [-1,0,3,5,9,12], target = 2
- * 输出: -1
- * 解释: 2 不存在 nums 中因此返回 -1
+ * Example 2:
+ * Input: nums = [-1,0,3,5,9,12], target = 2 Output: -1
  *
- * 来源：力扣（LeetCode）
- * 链接：https://leetcode-cn.com/problems/binary-search
+ * Explanation: 2 does not exist in nums so return -1
+ *
+ * from：LeetCode
+ * Link：https://leetcode-cn.com/problems/binary-search
+ * Difficulty : Easy
  */
 public class BinarySearch {
-    public static int search(int[] nums, int target) {
+
+    public static int binarySearch(int[] nums, int target) {
         int index = -1,left=0,right = nums.length-1,mid=0;
         while(right>=left){
             int half = left+((right-left)>>1);
@@ -34,8 +37,18 @@ public class BinarySearch {
         return index;
     }
 
-    public static void main(String[] args){
-        int[] nums = new int[]{-1,0,3,5,9,12};
-        search(nums,13);
+    // recursion
+    public static int binarySearch(int[] nums,int target, int left, int right) {
+        if (left > right) return -1;
+        int result = 0 , mid = left + ((right-left)>>1);
+        if(nums[mid] == target) {
+            result = mid ;
+        }else if(nums[mid] > target){
+            result = binarySearch(nums,target,left, mid-1);
+        }else if(nums[mid] < target){
+            result =  binarySearch(nums,target,mid+1, right);
+        }
+        return result;
     }
+
 }
