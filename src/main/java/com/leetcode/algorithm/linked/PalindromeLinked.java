@@ -1,4 +1,4 @@
-package com.leetcode.algorithm.Linked;
+package com.leetcode.algorithm.linked;
 
 /**
  * 请判断一个链表是否为回文链表。

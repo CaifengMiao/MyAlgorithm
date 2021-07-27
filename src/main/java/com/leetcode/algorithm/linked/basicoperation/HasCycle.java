@@ -1,4 +1,6 @@
-package com.leetcode.algorithm.Linked;
+package com.leetcode.algorithm.linked.basicoperation;
+
+import com.leetcode.algorithm.linked.ListNode;
 
 /**
  * 给定一个链表，判断链表中是否有环。
