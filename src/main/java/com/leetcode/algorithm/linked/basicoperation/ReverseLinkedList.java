@@ -38,4 +38,17 @@ public class ReverseLinkedList {
         }
         return reverseHead;
     }
+
+
+    public static ListNode reverse(ListNode reverseHead,ListNode currentHead){
+        if(currentHead == null) return reverseHead;
+        ListNode next = currentHead.next;
+        currentHead.next = reverseHead;
+        return reverse(currentHead,next);
+    }
+
+    public static ListNode reverseListD(ListNode head) {
+        return reverse(null,head);
+    }
+
 }
