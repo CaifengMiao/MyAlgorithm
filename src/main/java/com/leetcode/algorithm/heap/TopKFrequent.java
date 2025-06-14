@@ -34,5 +34,6 @@ public class TopKFrequent {
                 map.put(word,1);
             }
         }
+        return null;
     }
 }
